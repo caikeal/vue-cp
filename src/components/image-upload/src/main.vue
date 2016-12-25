@@ -1,6 +1,6 @@
 <template>
   <div class="k-img-upload-panel">
-    <div class="k-img-upload-panel__wrapper" :class="wrapperClass">
+    <div class="k-img-upload-panel__wrapper" :class="[wrapperClass, imageChosen?'img-chosen':'']">
       <div class="k-upload-panel__content">
         <div class="k-upload-panel__pre-show abs-lt" :style="styles"></div>
       </div>
@@ -61,6 +61,13 @@
             break;
         }
         return `k-img-upload-panel__wrapper-${tpl}`;
+      },
+      imageChosen () {
+        if (this.preImg) {
+          return true;
+        } else {
+          return false;
+        }
       }
     },
     methods: {
@@ -78,6 +85,12 @@
     position: relative;
     background-color: #fff;
     width: 81px;
+    padding: 8px;
+    border: 1px dashed #d9d9d9;
+    border-radius: 3px;
+  }
+  .k-img-upload-panel .k-img-upload-panel__wrapper-cell.img-chosen{
+    border: 1px solid #d9d9d9;
   }
   .k-img-upload-panel .k-img-upload-panel__wrapper-card{
     border: 2px solid #359df5;
