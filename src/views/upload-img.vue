@@ -19,6 +19,16 @@
         <k-img-btn type="card"></k-img-btn>
       </div>
     </el-card>
+
+    <!-- 上传列表 -->
+    <el-card class="box-card">
+      <div slot="header" class="clearfix">
+        <span style="line-height: 36px;">上传列表</span>
+      </div>
+      <div class="text item">
+        <k-img-btn type="cell" :disable="true"></k-img-btn>
+      </div>
+    </el-card>
     
   </div>
 </template>

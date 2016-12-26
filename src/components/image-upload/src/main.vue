@@ -4,7 +4,7 @@
       <div class="k-upload-panel__content">
         <div class="k-upload-panel__pre-show abs-lt" :style="styles"></div>
       </div>
-      <input class="k-upload-panel__file-input full-layer abs-lt" type="file" accept="image/png,image/jpeg,image/jpg" @change="editPic">
+      <input class="k-upload-panel__file-input full-layer abs-lt" type="file" accept="image/png,image/jpeg,image/jpg" @change="editPic" :disabled="disable">
     </div>
   </div>
 </template>
@@ -32,6 +32,11 @@
             default:
               return false;
           }
+        }
+      },
+      disable: {
+        default () {
+          return false;
         }
       }
     },
@@ -85,7 +90,7 @@
     position: relative;
     background-color: #fff;
     width: 81px;
-    padding: 8px;
+    padding: 4px;
     border: 1px dashed #d9d9d9;
     border-radius: 3px;
   }
